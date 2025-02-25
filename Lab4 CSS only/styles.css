@@ -1,0 +1,393 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 115vh;
+    background-color: #a7d3ed;
+}
+
+
+/* Estructura principal del gato gojo */
+.gojo-cat {
+    width: 200px;
+    height: 200px;
+    display: grid;
+    grid-template-areas: 
+        "body body body"
+        "tail tail tail";
+}
+
+
+/* Cuerpo  */
+.body {
+    grid-area: body;
+    background-color: white;
+    border-radius: 48% 48% 14% 37% / 34% 35% 17% 14% ;
+    position: relative;
+    height: 210px;
+    width: 165px;
+}
+
+.body:first-child {
+    z-index: 2;
+}
+
+
+/* Bigotes */
+.whiskersL {
+    position: absolute;
+    width: 100%;
+    top: 57px;
+    left: 52%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.whiskerLeft:nth-child(1) {
+    width: 15px;
+    height: 75px;
+    background-color: white;
+    border-radius: 0% 0% 0% 16% / 42% 55% 93% 100% ;
+    transform: rotate(5deg);
+    margin-right: 10px;
+    margin-top: -50px;
+}
+
+.whiskerLeft:nth-child(2) {
+    width: 20px;
+    height: 13px;
+    background-color: white;
+    border-radius: 100% 0% 0% 100% / 30% 30% 70% 70% ;
+    transform: rotate(10deg);
+    margin-left: -13px;
+    margin-top: -30px;
+    z-index: 2;
+}
+
+.whiskerLeft:nth-child(3) {
+    width: 20px;
+    height: 13px;
+    background-color: white;
+    border-radius: 100% 0% 0% 100% / 30% 30% 70% 70% ;
+    transform: rotate(10deg);
+    margin-left: -14px;
+    margin-top: 6px;
+    z-index: 2;
+}
+
+.whiskerLeft:nth-child(4) {
+    width: 23px;
+    height: 16px;
+    background-color: white;
+    border-radius: 69% 10% 10% 73% / 49% 10% 10% 50% ;
+    transform: rotate(10deg);
+    margin-left: -13px;
+    margin-top: 72px;
+    z-index: 2;
+}
+
+.whiskerLeft:nth-child(5) {
+    width: 25px;
+    height: 15px;
+    background-color: white;
+    border-radius: 69% 10% 10% 73% / 49% 10% 10% 50% ;
+    transform: rotate(10deg);
+    margin-left: -14px;
+    margin-top: 6px;
+    z-index: 2;
+}
+
+.whiskersR {
+    position: absolute;
+    width: 100%;
+    top: 57px;
+    left: 140%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.whiskerRight:nth-child(1) {
+    width: 15px;
+    height: 80px;
+    background-color: white;
+    border-radius: 0% 0% 0% 16% / 42% 55% 93% 100% ;
+    transform: rotate(174deg);
+    margin-right: 10px;
+    margin-top: -60px;
+    z-index: 2;
+}
+
+.whiskerRight:nth-child(2) {
+    width: 20px;
+    height: 13px;
+    background-color: white;
+    border-radius: 100% 0% 0% 100% / 61% 30% 70% 39% ;
+    transform: rotate(164deg);
+    margin-left: 10px;
+    margin-top: -2px;
+    z-index: 2;
+}
+
+.whiskerRight:nth-child(3) {
+    width: 20px;
+    height: 13px;
+    background-color: white;
+    border-radius: 100% 0% 0% 100% / 61% 30% 70% 39%  ;
+    transform: rotate(167deg);
+    margin-left: 10px;
+    margin-top: -35px;
+    z-index: 2;
+}
+
+
+/* Orejas */
+.ears {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: -30px;
+}
+
+.ear {
+    width: 55px;
+    height: 55px;
+    background-color: white;
+    border-radius: 50% 50% 70% 30% / 100% 100% 0% 0% ;
+}
+
+.ear:first-child {
+    transform: rotate(-20deg);
+    margin-left: 1px;
+}
+
+.ear:last-child {
+    transform: rotate(20deg);
+    margin-right: 1px;
+}
+
+
+/* Lentes */
+.glasses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 40px auto 0;
+    position: relative; 
+}
+
+.lens {
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+.lens::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    top: 10px;
+    left: 5px;
+    transform: rotate(-45deg);
+}
+
+.lens::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    top: 15px;
+    left: 10px;
+    transform: rotate(-45deg);
+}
+
+.bridge {
+    width: 35px;
+    height: 3px;
+    background-color: black;
+    position: relative; 
+    z-index: 3;
+}
+
+/* Boca */
+.mouth {
+    width: 20px;
+    height: 30px;
+    background-color: pink;
+    margin: -45px auto;
+    border-radius: 48% 46% 41% 56% / 16% 13% 100% 100% ;
+}
+
+
+/* Chuchillo */
+.sword {
+    position: absolute;
+    width: 15px;
+    height: 90px;
+    background: linear-gradient(to bottom, #ddd, #999);
+    border: 2px solid #333;
+    border-radius: 100% 0% 0% 0% / 42% 39% 24% 24%  ;
+    transform: rotate(10deg) translateX(-40px) translateY(-30px);
+    z-index: 1;
+}
+
+.sword::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -2px;
+    width: 20px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+/* Patitas */
+/*Se consultó a chatGPT porque se duplicaban las patitas y genero la siguiente función*/
+.legs {
+    position: absolute;
+    bottom: -25px; /* Asegura que las patas estén justo debajo del torso */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 110%;
+}
+
+.legLeft, .legRight {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.legLeft {
+    border-radius: 0% 0% 41% 100% / 0% 44% 100% 100%;
+    transform: rotate(45deg);
+    margin-right: 20px;
+}
+
+.legRight {
+    border-radius: 0% 0% 100% 40% / 0% 0% 100% 66%;
+    transform: rotate(-45deg);
+    margin-left: 20px;
+}
+
+
+/* Cola */
+.tail {
+    width: 45px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    right: -60px; 
+    border-radius: 71% 28% 100% 0% / 100% 28% 72% 0%  ;
+    transform: rotate(50deg);
+    z-index: 1; 
+}
+
+.tail::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 26px;
+    background-color: white;
+    border-radius: 82% 100% 100% 100% / 0% 100% 82% 100% ;
+    top: 20px;
+    left: 30px;
+}
+
+.tail-middle {
+    content: "";
+    position: absolute;
+    width: 27px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    top: 43px; 
+    left: 24px; 
+    z-index: 1;
+}
+
+.tail::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 47% 53% 100% 0% / 100% 51% 49% 0% ;
+    top: 70px;
+    left: 17px;
+    z-index: 1; 
+}
+
+
+/* Manitos */
+.handsRight {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+}
+
+.handRight {
+    width: 55px;
+    height: 35px;
+    background-color: white;
+    border-radius: 0% 100% 76% 46% / 0% 42% 90% 0%  ;
+}
+
+.handRight:last-child {
+    transform: translateX(35px);
+}
+
+.handsLeft {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+}
+
+.handLeft {
+    width: 45px;
+    height: 35px;
+    background-color: white;
+    border-radius: 100% 26% 76% 100% / 53% 0% 0% 40%  ;
+}
+
+.handLeft:last-child {
+    transform: translateX(-165px);
+}
+
+/* Manito sobre la espada */
+.handOverSword {
+    position: absolute;
+    width: 25px;
+    height: 30px;
+    background-color: white;
+    border-radius: 74% 100% 100% 75% / 100% 100% 100% 98% ;
+    top: 50%;
+    transform: translate(-50px, -1px); 
+    z-index: 5; 
+}
